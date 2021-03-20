@@ -10,8 +10,8 @@
  * Author:            Ayun Aribowo
  * Author URI:        https://ayunaribowo.com/
  * License:           GPL
- * Text Domain:       amazing-table
- * Domain Path:       /lang
+ * Text Domain:       bricks-f
+ * Domain Path:       /languages
  */
 
 namespace Bricks;
@@ -21,13 +21,11 @@ if ( ! defined( 'ABSPATH' ) )
 
 define( 'BRICKS_ROOT', plugin_dir_path( __FILE__ ) );
 
-
-
 function initialize() {
 
     if ( is_admin() ) 
     {
-
+        include_once 'lib/autoloader.php';
     }
 }
 

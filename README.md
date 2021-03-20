@@ -1,1 +1,1 @@
-# bricks-framework
+# bricks

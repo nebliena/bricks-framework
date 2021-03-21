@@ -14,18 +14,19 @@
  * Domain Path:       /languages
  */
 
-namespace Bricks;
-
 if ( ! defined( 'ABSPATH' ) ) 
 	return;
 
 define( 'BRICKS_ROOT', plugin_dir_path( __FILE__ ) );
 
+require_once( trailingslashit( dirname( __FILE__ ) ) . 'lib/autoloader.php' );
+
 function initialize() {
 
     if ( is_admin() ) 
     {
-        include_once 'lib/autoloader.php';
+
+        $bricks = new Bricks();
     }
 }
 

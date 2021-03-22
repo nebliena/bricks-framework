@@ -14,19 +14,26 @@
  * Domain Path:       /languages
  */
 
-if ( ! defined( 'ABSPATH' ) ) 
-	return;
+if (! defined( 'ABSPATH' )) 
+{
+	exit;
+}
 
-define( 'BRICKS_ROOT', plugin_dir_path( __FILE__ ) );
+define('BRICKS_ROOT', plugin_dir_path( __FILE__ ));
+define('BRICKS_ASSETS', BRICKS_ROOT . assets);
+define('BRICKS_CSS', BRICKS_ASSETS . css);
+define('BRICKS_JS', BRICKS_ASSETS . js);
 
-require_once( trailingslashit( dirname( __FILE__ ) ) . 'lib/autoloader.php' );
+require_once(trailingslashit( dirname( __FILE__ )) . 'lib/autoloader.php');
 
 function initialize() {
 
     if ( is_admin() ) 
     {
-
         $bricks = new Bricks();
+
+        register_activation_hook( __FILE__, array( $bricks, 'activate'));
+        register_activation_hook( __FILE__, array( $bricks, 'deactivate'));
     }
 }
 

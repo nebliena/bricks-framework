@@ -22,7 +22,8 @@ class Enqueuer
             BRICKS_CSS . 'bricks-f.css', 
             array(), 
             $this->version, 
-            'all' );
+            'all' 
+        );
     }
 
     public function enqueueScripts() 
@@ -32,6 +33,7 @@ class Enqueuer
             BRICKS_JS . 'bricks-f.js', 
             array(), 
             $this->version, 
-            false );
+            false 
+        );
     }
 }

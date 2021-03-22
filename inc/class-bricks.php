@@ -17,8 +17,8 @@ class Bricks
     public function __construct() 
     {
         $action             = new Activation;
-        $this->activation   = $this->activation();
-        $this->activation   = $this->deactivation();
+        $this->activation   = $action->activation();
+        $this->activation   = $action->deactivation();
         $this->version      = '1.0.0';
         $this->loader       = new Loader;
         $this->meta         = new Meta;

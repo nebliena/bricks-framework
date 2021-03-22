@@ -1,5 +1,5 @@
 <?php
-namespace Bricks\Core;
+namespace Bricks\Cores;
 
 class Loader 
 {

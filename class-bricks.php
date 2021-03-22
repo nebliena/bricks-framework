@@ -20,9 +20,9 @@ if (! defined( 'ABSPATH' ))
 }
 
 define('BRICKS_ROOT', plugin_dir_path( __FILE__ ));
-define('BRICKS_ASSETS', BRICKS_ROOT . assets);
-define('BRICKS_CSS', BRICKS_ASSETS . css);
-define('BRICKS_JS', BRICKS_ASSETS . js);
+define('BRICKS_ASSETS', BRICKS_ROOT . 'assets');
+define('BRICKS_CSS', BRICKS_ASSETS . 'css');
+define('BRICKS_JS', BRICKS_ASSETS . 'js');
 
 require_once(trailingslashit( dirname( __FILE__ )) . 'lib/autoloader.php');
 

@@ -6,6 +6,8 @@ class BricksBlock {
 		this.title 		= title;
 		this.icon 		= icon;
 		this.category 	= category;
+
+		this.registerBrickBlock();
 	}
 
 	registerBrickBlock() {
@@ -58,4 +60,4 @@ class BricksBlock {
 	}
 }
 
-exports.BricksBlocks = BricksBlocks;
+module.exports.BricksBlock = BricksBlock;

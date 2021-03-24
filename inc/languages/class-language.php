@@ -1,7 +1,7 @@
 <?php
 namespace Bricks\Languages;
 
-class BricksI18n
+class Language
 {
 	public function bricksTextdomain() {
 

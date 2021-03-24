@@ -19,21 +19,30 @@ if (! defined( 'ABSPATH' ))
 	exit;
 }
 
-define('BRICKS_ROOT', plugin_dir_path( __FILE__ ));
-define('BRICKS_ASSETS', BRICKS_ROOT . 'assets');
-define('BRICKS_CSS', BRICKS_ASSETS . 'css');
-define('BRICKS_JS', BRICKS_ASSETS . 'js');
+//path
+define('BRICKS_ROOT', plugin_dir_url( __FILE__ ));
+define('BRICKS_ROOT_PATH', plugin_dir_path( __FILE__ ));
 
-require_once(trailingslashit( dirname( __FILE__ )) . 'lib/autoloader.php');
+define('BRICKS_ASSETS', trailingslashit(BRICKS_ROOT . 'assets'));
+define('BRICKS_ASSETS_PATH', trailingslashit(BRICKS_ROOT_PATH . 'assets'));
+
+define('BRICKS_CSS', trailingslashit(BRICKS_ASSETS . 'dist/css'));
+define('BRICKS_CSS_PATH', trailingslashit(BRICKS_ASSETS_PATH . 'dist/css'));
+
+define('BRICKS_JS', trailingslashit(BRICKS_ASSETS . 'src'));
+define('BRICKS_JS_PATH', trailingslashit(BRICKS_ASSETS_PATH . 'src'));
+
+require_once(trailingslashit( dirname( __FILE__ )) . 'lib' . DIRECTORY_SEPARATOR . 'autoloader.php');
 
 function initialize() {
 
     if ( is_admin() ) 
     {
-        $bricks = new Bricks();
+        $bricks = new Bricks;
 
         register_activation_hook( __FILE__, array( $bricks, 'activate'));
         register_activation_hook( __FILE__, array( $bricks, 'deactivate'));
+        $bricks->run();
     }
 }
 

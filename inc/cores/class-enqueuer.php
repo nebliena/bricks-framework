@@ -17,8 +17,9 @@ class Enqueuer
 
     public function enqueueStyles() 
     {
+        //var_dump(BRICKS_CSS);die();
         wp_enqueue_style( 
-            $this->slug, 
+            $this->slug . '-style', 
             BRICKS_CSS . 'bricks-f.css', 
             array(), 
             $this->version, 
@@ -29,8 +30,8 @@ class Enqueuer
     public function enqueueScripts() 
     {
         wp_enqueue_script(
-            $this->slug, 
-            BRICKS_JS . 'bricks-f.js', 
+            $this->slug . '-script', 
+            BRICKS_JS . 'bricks.js', 
             array(), 
             $this->version, 
             false 

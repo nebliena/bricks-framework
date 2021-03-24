@@ -29,7 +29,7 @@ spl_autoload_register(function( $filename )
 
     $fully_qualified_path = trailingslashit(
         
-        BRICKS_ROOT . 'inc'
+        BRICKS_ROOT_PATH . 'inc'
     );
 
     $dir = [];

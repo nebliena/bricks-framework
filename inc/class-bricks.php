@@ -1,6 +1,7 @@
 <?php
 use Bricks\Admins\Admin;
 use Bricks\Cores\Activation;
+use Bricks\Cores\Block;
 use Bricks\Cores\Enqueuer;
 use Bricks\Cores\Loader;
 use Bricks\Cores\Meta;
@@ -38,12 +39,13 @@ class Bricks
     private function enqueueHooks()
     {
         $enqueuer   = new Enqueuer;
-        //var_dump($this->loader);die();
+        $block      = new Block;
 
-        $this->loader->addAction( 'wp_head', $enqueuer, 'enqueueStyles' );
-		$this->loader->addAction( 'wp_head', $enqueuer, 'enqueueScripts' );
-        $this->loader->addAction( 'admin_head', $enqueuer, 'enqueueStyles' );
-		$this->loader->addAction( 'admin_head', $enqueuer, 'enqueueScripts' );
+
+        $this->loader->addFilter('block_categories', $block, 'blockCategories');
+
+        //$this->loader->addAction( 'enqueue_block_assets', $enqueuer, 'enqueueStyles' );
+		$this->loader->addAction( 'enqueue_block_assets', $enqueuer, 'enqueueScripts' );
     }
 
     public function run() 

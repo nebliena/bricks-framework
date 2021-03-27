@@ -29,8 +29,8 @@ define('BRICKS_ASSETS_PATH', trailingslashit(BRICKS_ROOT_PATH . 'assets'));
 define('BRICKS_CSS', trailingslashit(BRICKS_ASSETS . 'dist/css'));
 define('BRICKS_CSS_PATH', trailingslashit(BRICKS_ASSETS_PATH . 'dist/css'));
 
-define('BRICKS_JS', trailingslashit(BRICKS_ASSETS . 'src'));
-define('BRICKS_JS_PATH', trailingslashit(BRICKS_ASSETS_PATH . 'src'));
+define('BRICKS_JS', trailingslashit(BRICKS_ASSETS . 'dist/js'));
+define('BRICKS_JS_PATH', trailingslashit(BRICKS_ASSETS_PATH . 'dist/js'));
 
 require_once(trailingslashit( dirname( __FILE__ )) . 'lib' . DIRECTORY_SEPARATOR . 'autoloader.php');
 
